@@ -43,10 +43,12 @@ const addTodo = () => {
 </script>
 
 <template>
-  <div class="todo-input">
-    <input type="text" placeholder="Add a new task" required v-model.trim="content">
-    <input type="date" placeholder="Deadline" required v-model.trim="date">
-    <button @click="addTodo()">Create <img src="@/assets/icons/plus-icon.svg" alt="plus icon"></button>
+  <div class="todo-container">
+    <div class="todo-input">
+      <input type="text" placeholder="Add a new task" required v-model.trim="content">
+      <input type="date" placeholder="Deadline" required v-model.trim="date">
+      <button @click="addTodo()">Create <img src="@/assets/icons/plus-icon.svg" alt="plus icon"></button>
+    </div>
   </div>
   <ul class="todo-error" :class="{ visible :error.length }">
     <li v-for="(err,i) in error" :key="i">
@@ -57,16 +59,22 @@ const addTodo = () => {
 
 <style lang="scss" scoped>
 .todo {
+  &-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    transform: translateY(10.7rem);
+  }
+
   &-input {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    position: absolute;
-    bottom: 0;
-    transform: translateY(50%);
-
+    width: 100%;
     max-width: 70rem;
+    margin: 0 3rem;
 
     input {
       max-width: 60rem;
@@ -79,6 +87,7 @@ const addTodo = () => {
       font-size: 1.6rem;
       font-weight: 400;
       width: 60%;
+      max-height: 5.2rem;
 
 
       &[type=date]:invalid::-webkit-datetime-edit-day-field, &[type=date]:invalid::-webkit-datetime-edit-month-field, &[type=date]:invalid::-webkit-datetime-edit-year-field {
@@ -90,7 +99,7 @@ const addTodo = () => {
         width: 40%;
       }
 
-      &::-webkit-datetime-edit {
+      &[type=date]::-webkit-datetime-edit-day-field, &[type=date]::-webkit-datetime-edit-month-field, &[type=date]::-webkit-datetime-edit-year-field {
         font-family: 'Inter', sans-serif;
       }
 
@@ -114,6 +123,18 @@ const addTodo = () => {
       color: #F2F2F2;
       font-size: 1.4rem;
       padding: 1.6rem;
+    }
+    
+    @media only screen and (max-width: 34.375em) {
+      flex-direction: column;
+
+      input, input:last-of-type, button {
+        width: 100%;
+      }
+
+      input::placeholder {
+        text-align: center;
+      }
     }
   }
 
@@ -156,6 +177,13 @@ const addTodo = () => {
       &:not(:last-child) {
         margin-bottom: 0.5rem;
       }
+    }
+
+    @media only screen and (max-width: 34.375em) {
+      transform: translateX(-50%);
+      left: 50%;
+      width: 60vw;
+      top: 38%;
     }
   }
 }

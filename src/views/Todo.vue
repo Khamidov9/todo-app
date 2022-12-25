@@ -27,6 +27,6 @@ import TodoForm from "@/components/todo/TodoForm.vue";
 }
 
 .main {
-
+  margin: 0 3rem;
 }
 </style>
