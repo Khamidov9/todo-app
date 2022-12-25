@@ -99,7 +99,7 @@ const addTodo = () => {
         width: 40%;
       }
 
-      &[type=date]::-webkit-datetime-edit-day-field, &[type=date]::-webkit-datetime-edit-month-field, &[type=date]::-webkit-datetime-edit-year-field {
+      &::-webkit-datetime-edit {
         font-family: 'Inter', sans-serif;
       }
 
