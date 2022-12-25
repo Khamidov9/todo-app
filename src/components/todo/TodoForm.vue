@@ -60,17 +60,31 @@ const addTodo = () => {
 <style lang="scss" scoped>
 .todo {
   &-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     width: 100%;
-    transform: translateY(10.7rem);
+    -webkit-transform: translateY(10.7rem);
+        -ms-transform: translateY(10.7rem);
+            transform: translateY(10.7rem);
   }
 
   &-input {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     gap: 1rem;
     width: 100%;
     max-width: 70rem;
@@ -103,6 +117,26 @@ const addTodo = () => {
         font-family: 'Inter', sans-serif;
       }
 
+      &::-webkit-input-placeholder {
+        color: #808080;
+        font-family: 'Inter', sans-serif;
+      }
+
+      &::-moz-placeholder {
+        color: #808080;
+        font-family: 'Inter', sans-serif;
+      }
+
+      &:-ms-input-placeholder {
+        color: #808080;
+        font-family: 'Inter', sans-serif;
+      }
+
+      &::-ms-input-placeholder {
+        color: #808080;
+        font-family: 'Inter', sans-serif;
+      }
+
       &::placeholder {
         color: #808080;
         font-family: 'Inter', sans-serif;
@@ -110,9 +144,15 @@ const addTodo = () => {
     }
 
     button {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      align-items: center;
-      justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
       gap: 0.8rem;
       cursor: pointer;
       outline: none;
@@ -124,12 +164,31 @@ const addTodo = () => {
       font-size: 1.4rem;
       padding: 1.6rem;
     }
-    
+
     @media only screen and (max-width: 34.375em) {
-      flex-direction: column;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
 
       input, input:last-of-type, button {
         width: 100%;
+      }
+
+      input::-webkit-input-placeholder {
+        text-align: center;
+      }
+
+      input::-moz-placeholder {
+        text-align: center;
+      }
+
+      input:-ms-input-placeholder {
+        text-align: center;
+      }
+
+      input::-ms-input-placeholder {
+        text-align: center;
       }
 
       input::placeholder {
@@ -147,6 +206,8 @@ const addTodo = () => {
     background: #8284FA;
     padding: 1rem 2rem;
     border-radius: 10px;
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
     transition: all 0.5s;
 
     &.visible {
@@ -171,7 +232,9 @@ const addTodo = () => {
         border-radius: 50%;
         top: 50%;
         left: -10px;
-        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
       }
 
       &:not(:last-child) {
@@ -180,7 +243,9 @@ const addTodo = () => {
     }
 
     @media only screen and (max-width: 34.375em) {
-      transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+          -ms-transform: translateX(-50%);
+              transform: translateX(-50%);
       left: 50%;
       width: 60vw;
       top: 38%;

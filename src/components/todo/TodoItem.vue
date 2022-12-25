@@ -31,15 +31,26 @@ const deleteTodo = (id) => {
   &-item {
     background: #262626;
     border: 1px solid #333333;
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
+    -webkit-box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
     border-radius: 8px;
     padding: 1.6rem;
     width: 100%;
 
+    display: -webkit-box;
+
+    display: -ms-flexbox;
+
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     gap: 12px;
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
     transition: all 0.2s;
 
     &.mark {
@@ -52,7 +63,9 @@ const deleteTodo = (id) => {
         &::before {
           width: 4px;
           height: 2px;
-          transform: rotate(40deg);
+          -webkit-transform: rotate(40deg);
+              -ms-transform: rotate(40deg);
+                  transform: rotate(40deg);
           top: 7px;
           left: 2px;
         }
@@ -60,7 +73,9 @@ const deleteTodo = (id) => {
         &::after {
           width: 8px;
           height: 2px;
-          transform: rotate(135deg);
+          -webkit-transform: rotate(135deg);
+              -ms-transform: rotate(135deg);
+                  transform: rotate(135deg);
           right: 1px;
           bottom: 5px;
         }
@@ -68,7 +83,8 @@ const deleteTodo = (id) => {
 
       .todo-content {
         color: #808080;
-        text-decoration-line: line-through;
+        -webkit-text-decoration-line: line-through;
+                text-decoration-line: line-through;
       }
     }
 
@@ -79,10 +95,14 @@ const deleteTodo = (id) => {
       height: 1.7rem;
       position: relative;
       cursor: pointer;
+      -webkit-transition: all 0.2s;
+      -o-transition: all 0.2s;
       transition: all 0.2s;
 
       &::before, &::after {
-        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
         position: absolute;
         content: '';
         width: 0;
@@ -97,9 +117,15 @@ const deleteTodo = (id) => {
     }
 
     div {
+      display: -webkit-box;
+      display: -ms-flexbox;
       display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
+      -webkit-box-align: start;
+          -ms-flex-align: start;
+              align-items: flex-start;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
       width: 100%;
     }
 
@@ -112,6 +138,8 @@ const deleteTodo = (id) => {
     color: #F2F2F2;
     font-size: 1.4rem;
     line-height: 140%;
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
     transition: all 0.2s;
   }
 
