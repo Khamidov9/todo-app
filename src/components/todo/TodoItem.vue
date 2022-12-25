@@ -20,7 +20,7 @@ const deleteTodo = (id) => {
     </label>
     <div>
       <p class="todo-content">{{ item.content }}</p>
-      <p class="todo-deadline">{{ item.deadline }}</p>
+      <p class="todo-deadline">{{ item.deadline.replace('T', ' ') }}</p>
     </div>
     <img src="@/assets/icons/trash.svg" alt="trash icon" @click="deleteTodo(item.id)">
   </div>
