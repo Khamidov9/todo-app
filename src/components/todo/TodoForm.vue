@@ -29,7 +29,7 @@ const addTodo = () => {
     }, 3000)
   }
 
-  if (content.value.length > 0) {
+  if (content.value.length > 0 && error.value.length === 0) {
     store.addTodo({
       deadline: date.value,
       content: content.value,
