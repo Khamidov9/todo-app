@@ -104,17 +104,19 @@ const addTodo = () => {
       max-height: 5.2rem;
 
 
-      &[type=date]:invalid::-webkit-datetime-edit-day-field, &[type=date]:invalid::-webkit-datetime-edit-month-field, &[type=date]:invalid::-webkit-datetime-edit-year-field {
+      &[type="datetime-local"]:invalid::-webkit-datetime-edit-day-field,
+      &[type="datetime-local"]:invalid::-webkit-datetime-edit-month-field,
+      &[type="datetime-local"]:invalid::-webkit-datetime-edit-year-field {
         color: #999;
+      }
+
+      &[type="datetime-local"] {
+        font-family: 'Inter', sans-serif;
       }
 
       &:last-of-type {
         text-align: center;
         width: 40%;
-      }
-
-      &::-webkit-datetime-edit {
-        font-family: 'Inter', sans-serif;
       }
 
       &::-webkit-input-placeholder {
