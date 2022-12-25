@@ -46,7 +46,7 @@ const addTodo = () => {
   <div class="todo-container">
     <div class="todo-input">
       <input type="text" placeholder="Add a new task" required v-model.trim="content">
-      <input type="date" placeholder="Deadline" required v-model.trim="date">
+      <input type="datetime-local" placeholder="dd.mm.yyyy" required v-model.trim="date">
       <button @click="addTodo()">Create <img src="@/assets/icons/plus-icon.svg" alt="plus icon"></button>
     </div>
   </div>
