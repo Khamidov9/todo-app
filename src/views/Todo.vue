@@ -1,12 +1,13 @@
 <script setup>
-// components
 import TodoList from '@/components/todo/TodoList.vue'
 import TodoForm from "@/components/todo/TodoForm.vue";
 </script>
 
 <template>
   <header class="header">
-    <img src="@/assets/icons/logo.svg" alt="logo">
+    <router-link to="/">
+      <img src="@/assets/icons/logo.svg" alt="logo">
+    </router-link>
     <TodoForm />
   </header>
   <main class="main">
